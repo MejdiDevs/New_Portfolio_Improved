@@ -1,0 +1,210 @@
+#skill_list_section {
+  margin-top: 150px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+#skill_list_section > button.halo {
+  margin-bottom: 100px;
+  width: 220px;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+#skill_list_section > h3 img {
+  margin: 0;
+  height: 1.2em;
+}
+#skill_list_section section:has(> .cert_wrapper) {
+  width: 100%;
+}
+#skill_list_section section:has(> .cert_wrapper):first-of-type .cert_wrapper {
+  margin-top: 40px !important;
+}
+#skill_list_section .cert_wrapper {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 120px;
+}
+#skill_list_section .cert_wrapper .cert {
+  padding: 15px;
+  padding-bottom: 0;
+  height: calc(100% - 30px);
+  width: calc(50% - 90px);
+  background: rgba(10, 124, 255, 0.24);
+  filter: drop-shadow(0px 25px 25px rgba(0, 0, 0, 0.15));
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+#skill_list_section .cert_wrapper .cert:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0px 35px 35px rgba(10, 124, 255, 0.25));
+}
+#skill_list_section .cert_wrapper .cert #img {
+  border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 22/17;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}
+#skill_list_section .cert_wrapper .cert p {
+  margin-top: 10px;
+}
+#skill_list_section button.halo {
+  margin-top: 40px;
+}
+#skill_list_section #badge_wrapper {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  gap: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+#skill_list_section #badge_wrapper .badge {
+  padding: 25px;
+  height: 150px;
+  aspect-ratio: 1/1;
+  box-shadow: inset 0px 0px 30px rgba(10, 124, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#skill_list_section #badge_wrapper .badge img {
+  width: 80%;
+}
+#skill_list_section .skill_list {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 110px;
+}
+#skill_list_section .skill_list > section {
+  width: 100%;
+}
+#skill_list_section .skill_list .class_wrapper {
+  width: 100%;
+  margin-bottom: 100px;
+}
+#skill_list_section .skill_list .class_wrapper > div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+}
+#skill_list_section .skill_list .class_wrapper > div > h1 {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: -20px;
+  grid-column: 1/-1;
+}
+#skill_list_section .skill_list .class_wrapper > div .skill {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0px 0px 15px rgba(10, 124, 255, 0.8);
+  border-radius: 35px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  padding: 10px 5px;
+  padding-bottom: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#skill_list_section .skill_list .class_wrapper > div .skill:hover {
+  transform: translateY(-4px);
+  box-shadow: inset 0px 0px 15px rgba(10, 124, 255, 0.8), 0px 6px 16px rgba(10, 124, 255, 0.4);
+}
+#skill_list_section .skill_list .class_wrapper > div .skill img {
+  width: 100px;
+  aspect-ratio: 1/1;
+}
+#skill_list_section .skill_list .class_wrapper > div .skill p {
+  margin: 0;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  #skill_list_section {
+    margin-top: 100px;
+  }
+  #skill_list_section .cert_wrapper {
+    gap: 35px;
+    margin-top: 80px;
+  }
+  #skill_list_section .cert_wrapper .cert {
+    width: calc(50% - 45px);
+  }
+  #skill_list_section .skill_list .class_wrapper > div {
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, 130px);
+  }
+  #skill_list_section .skill_list .class_wrapper > div .skill img {
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #skill_list_section {
+    margin-top: 4.5em !important;
+  }
+  #skill_list_section .cert_wrapper {
+    flex-flow: column nowrap;
+    gap: 30px;
+    margin-top: 60px;
+  }
+  #skill_list_section .cert_wrapper .cert {
+    width: calc(100% - 30px);
+  }
+  #skill_list_section .skill_list {
+    margin-top: 80px;
+  }
+  #skill_list_section .skill_list .class_wrapper {
+    margin-bottom: 80px;
+  }
+  #skill_list_section .skill_list .class_wrapper > div {
+    gap: 0;
+    row-gap: 20px;
+    grid-template-columns: repeat(2, calc(50% - 10px)) !important;
+    justify-content: space-between;
+  }
+  #skill_list_section .skill_list .class_wrapper > div > h1 {
+    margin-bottom: 0;
+    font-size: 1.6em;
+  }
+  #skill_list_section .skill_list .class_wrapper > div .skill {
+    width: auto;
+  }
+  #skill_list_section .skill_list .class_wrapper > div .skill img {
+    width: 80px;
+  }
+  #skill_list_section #badge_wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 15px;
+  }
+  #skill_list_section #badge_wrapper .badge {
+    height: 120px;
+    padding: 20px;
+  }
+}

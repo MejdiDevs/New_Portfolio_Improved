@@ -1,0 +1,663 @@
+/* Similar Projects Section - Extends projectGrid.css styles */
+#similar_projects_section {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#similar_projects_section #project_section_wrapper {
+  max-width: 1550px;
+  width: calc(100% + 100px);
+}
+
+#similar_projects_section .title_wrapper>h2 img {
+  height: 0.9em;
+}
+
+#similar_projects_section .title_wrapper p {
+  font-size: 1.2em;
+  color: #9CA3AF;
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+/* Reuse swiper_wrapper styles from projects.css */
+#similar_projects_section .swiper_wrapper {
+  position: relative;
+  overflow: visible;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+#similar_projects_section .swiper_wrapper .swiper {
+  padding-top: 15px;
+  padding-bottom: 50px;
+  mask: linear-gradient(to right, transparent, white 50px, white calc(100% - 50px), transparent);
+  -webkit-mask: linear-gradient(to right, transparent, white 50px, white calc(100% - 50px), transparent);
+  overflow: visible;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+#similar_projects_section .swiper_wrapper .swiper .swiper-wrapper {
+  height: auto !important;
+}
+
+#similar_projects_section .swiper_wrapper .swiper .swiper-slide {
+  height: auto !important;
+}
+
+#similar_projects_section .swiper_wrapper .swiper .swiper-slide {
+  overflow: visible;
+}
+
+/* Grid wrapper inside swiper slide - MUST match projectGrid exactly */
+#similar_projects_section .swiper_wrapper .swiper .swiper-slide .grid_wrapper {
+  margin-top: 0;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, calc(50% - 20px));
+  width: calc(100% - 120px);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 15px !important;
+}
+
+/* CRITICAL: Copy ALL projectGrid card styles - these MUST match exactly */
+#similar_projects_section .grid_wrapper .grid_project {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+#similar_projects_section .grid_wrapper .grid_project.hovered {
+  transform: translateY(-8px);
+  box-shadow: 0px 35px 35px rgba(10, 124, 255, 0.25);
+}
+
+#similar_projects_section .grid_wrapper .grid_project .project_badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 18px;
+  color: #fff;
+  font-size: 0.85em;
+  font-weight: 500;
+  z-index: 10;
+  border-radius: 10px;
+  background: rgba(11, 23, 39, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  width: auto !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+}
+
+#similar_projects_section .grid_wrapper .grid_project .project_badge.featured {
+  background: rgba(10, 124, 255, 0.3);
+  border-color: rgba(10, 124, 255, 0.4);
+  box-shadow: 0 0 20px rgba(10, 124, 255, 0.2), inset 0 0 20px rgba(10, 124, 255, 0.1);
+  overflow: hidden;
+}
+
+#similar_projects_section .grid_wrapper .grid_project .project_badge.featured::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper {
+  width: calc(100% - 100px);
+  aspect-ratio: 4/3;
+  padding: 50px;
+  border-radius: 20px 20px 0 0;
+  background: rgba(2, 30, 61, 0.71);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* Fix iOS Safari overflow hidden + border-radius bug */
+  transform: translateZ(0);
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper .grid_project_image {
+  border-radius: 12px;
+  aspect-ratio: 4/3;
+  width: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.04));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  position: relative;
+}
+
+#similar_projects_section .grid_wrapper .grid_project.hovered #img_wrapper .grid_project_image {
+  transform: scale(1.05);
+  filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15)) drop-shadow(0px 15px 12px rgba(0, 0, 0, 0.08));
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper div {
+  border-radius: 12px;
+  aspect-ratio: 4/3;
+  width: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.04));
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper .image_gallery_preview {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: end;
+  justify-content: flex-end;
+  /* Override the generic #img_wrapper div rule */
+  aspect-ratio: auto;
+  width: auto;
+  filter: none;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper .grid_project_image .preview_thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  /* Override the generic #img_wrapper div rule */
+  aspect-ratio: auto;
+  filter: none;
+}
+
+#similar_projects_section .grid_wrapper .grid_project.hovered #img_wrapper .grid_project_image .preview_thumb {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper .grid_project_image .preview_thumb:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper .grid_project_image .preview_thumb:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #img_wrapper .grid_project_image .preview_thumb:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content {
+  width: calc(100% - 100px);
+  height: auto !important;
+  border-radius: 0 0 20px 20px;
+  background: rgba(10, 124, 255, 0.24);
+  padding: 30px 50px;
+  padding-bottom: 40px;
+  gap: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content>a {
+  position: absolute;
+  cursor: alias;
+  right: 30px;
+  top: 36px;
+  display: flex;
+  align-items: center;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content>a img {
+  height: 25px;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .title_wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 4px;
+  gap: 10px;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .title_wrapper h2 {
+  margin: 0;
+  max-width: 75%;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .title_wrapper .project_badge.featured {
+  position: relative;
+  top: auto;
+  right: auto;
+  padding: 6px 12px;
+  background: rgba(10, 124, 255, 0.08);
+  border: 1px solid rgba(10, 124, 255, 0.15);
+  border-radius: 50px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #4DA3FF;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  margin: 0;
+  z-index: 1;
+  width: auto !important;
+  height: auto !important;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .title_wrapper .project_badge.featured:after {
+  display: none;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content h2 {
+  background: linear-gradient(0deg, rgb(172, 174, 173) 0%, rgb(255, 255, 255) 57%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 1.8em;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content h2,
+#similar_projects_section .grid_wrapper .grid_project #content p {
+  margin: 0;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content>p {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .tag_wrapper {
+  overflow-y: hidden;
+  height: 31px;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .tag_wrapper .tag,
+#similar_projects_section .grid_wrapper .grid_project #content .tag_wrapper p {
+  text-wrap: nowrap;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access button p {
+  font-size: 1.55em !important;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access button:has(p.mobl)>p.mobl {
+  display: none !important;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access button,
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  background: transparent;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access button img,
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access a img {
+  margin: 0;
+  height: 25px;
+}
+
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access button p,
+#similar_projects_section .grid_wrapper .grid_project #content .bottom_access a p {
+  color: #0A7CFF;
+  margin: 0;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+/* Reuse nav_wrapper styles from index.css - arrows are transparent buttons */
+#similar_projects_section .nav_wrapper {
+  width: 100%;
+}
+
+#similar_projects_section .pags_wrapper_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#similar_projects_section .pags_wrapper {
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 120px);
+}
+
+#similar_projects_section .pags_wrapper .pags_container {
+  display: flex;
+  gap: 10px;
+}
+
+#similar_projects_section .pags_wrapper .pags_container>button {
+  cursor: pointer !important;
+  background: rgba(10, 124, 255, 0.24) !important;
+  border: 1px solid #0A7CFF !important;
+  border-radius: 1px;
+  width: 30px;
+  height: 5px;
+  transition: background 250ms, transform 250ms;
+  display: block;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: auto !important;
+}
+
+#similar_projects_section .pags_wrapper .pags_container>button:hover {
+  background: rgba(10, 124, 255, 0.4) !important;
+  transform: scaleY(1.2);
+}
+
+#similar_projects_section .pags_wrapper .pags_container>button.active {
+  background: #0A7CFF !important;
+  border: 1px solid #0A7CFF !important;
+  border-radius: 4px;
+}
+
+#similar_projects_section .pags_wrapper .view_all_link {
+  color: #0A7CFF;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+#similar_projects_section .pags_wrapper .view_all_link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #0A7CFF;
+  transition: width 0.3s ease;
+}
+
+#similar_projects_section .pags_wrapper .view_all_link:hover::after {
+  width: 100%;
+}
+
+#similar_projects_section .pags_wrapper .view_all_link:hover {
+  color: #4DA3FF;
+}
+
+/* Light theme support */
+[data-theme="light"] #similar_projects_section .grid_wrapper .grid_project #content {
+  background: rgba(235, 243, 255, 0.71);
+  color: #000;
+}
+
+[data-theme="light"] #similar_projects_section .grid_wrapper .grid_project #img_wrapper {
+  background: #ACCFE2;
+}
+
+[data-theme="light"] #similar_projects_section .title_wrapper p {
+  color: #4B5563;
+}
+
+
+
+@media only screen and (max-width: 1020px) {
+  #similar_projects_section {
+    margin-top: 80px;
+  }
+
+  /* Change grid to show one project per slide - hide second project if present */
+  #similar_projects_section .swiper_wrapper .swiper .swiper-slide .grid_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: calc(100% - 120px);
+    margin: 0 auto;
+    padding-top: 15px !important;
+  }
+
+  /* Hide second project in each slide to show only one per slide */
+  #similar_projects_section .swiper_wrapper .swiper .swiper-slide .grid_wrapper>a:nth-child(2) {
+    display: none;
+  }
+
+  /* Style project cards to match projects.css project_slide at 1020px breakpoint */
+  #similar_projects_section .grid_wrapper .grid_project {
+    width: calc(100% - 120px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project.hovered {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 35px 35px rgba(10, 124, 255, 0.25);
+  }
+
+  /* Image wrapper styling - matches projects.css project_slide #img_wrapper at 1020px */
+  #similar_projects_section .grid_wrapper .grid_project #img_wrapper {
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 20px 20px 0 0;
+    aspect-ratio: 4 / 3;
+    background: rgba(2, 30, 61, 0.71);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #img_wrapper .grid_project_image {
+    width: calc(100% - 40px);
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(0px 4px 3px rgba(0, 0, 0, 0.1)) drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.04));
+    transition: transform 0.4s ease, filter 0.4s ease;
+    position: relative;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project.hovered #img_wrapper .grid_project_image {
+    transform: scale(1);
+    filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.15)) drop-shadow(0px 15px 12px rgba(0, 0, 0, 0.08));
+  }
+
+  /* Content wrapper styling - matches projects.css project_slide #content at 1020px */
+  #similar_projects_section .grid_wrapper .grid_project #content {
+    gap: 20px;
+    width: calc(100% - 40px);
+    border-radius: 0 0 20px 20px;
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+  }
+
+  /* Hide desktop tags, show mobile tags - matches projects.css */
+  #similar_projects_section .grid_wrapper .grid_project #content .tag_wrapper:not(.mobl) {
+    display: none;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #content .tag_wrapper.mobl {
+    display: flex !important;
+  }
+
+  /* Text truncation - matches projects.css */
+  #similar_projects_section .grid_wrapper .grid_project #content>p {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Project badge positioning - matches projects.css */
+  #similar_projects_section .grid_wrapper .grid_project .project_badge {
+    top: 15px;
+    right: 15px;
+  }
+
+  /* Hide navigation arrows - matches projects.css */
+  #similar_projects_section .nav_wrapper {
+    display: none;
+  }
+
+  #similar_projects_section .pags_wrapper {
+    width: calc(100% - 120px);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #similar_projects_section {
+    margin-top: 80px;
+  }
+
+  #similar_projects_section .swiper_wrapper .swiper .swiper-slide .grid_wrapper {
+    width: calc(100% - 20px);
+  }
+
+  #similar_projects_section .swiper_wrapper .swiper {
+    mask: linear-gradient(to right, transparent, white 30px, white calc(100% - 20px), transparent);
+    -webkit-mask: linear-gradient(to right, transparent, white 30px, white calc(100% - 20px), transparent);
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project {
+    width: calc(100% - 30px);
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #img_wrapper,
+  #similar_projects_section .grid_wrapper .grid_project #content {
+    width: calc(100% - 60px);
+    padding: 30px;
+  }
+
+  #similar_projects_section .pags_wrapper {
+    width: calc(100% - 60px);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #similar_projects_section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  #similar_projects_section #project_section_wrapper {
+    width: calc(100% + 50px);
+  }
+
+  #similar_projects_section .title_wrapper {
+    margin-bottom: 30px;
+  }
+
+  #similar_projects_section .title_wrapper p {
+    font-size: 1em;
+  }
+
+  #similar_projects_section .swiper_wrapper .swiper .swiper-slide .grid_wrapper {
+    gap: 25px;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #img_wrapper {
+    width: calc(100%);
+    padding: 0;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #content {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #content .bottom_access button:has(p.mobl)>p {
+    display: none;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #content .bottom_access button:has(p.mobl)>p.mobl {
+    display: flex !important;
+  }
+
+  #similar_projects_section .pags_wrapper {
+    width: calc(100% - 100px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #similar_projects_section .grid_wrapper .grid_project #content {
+    width: calc(100% - 40px);
+    padding: 20px;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #content h2 {
+    font-size: 1.4em;
+  }
+
+  #similar_projects_section .grid_wrapper .grid_project #content>p {
+    font-size: 0.95em;
+  }
+}

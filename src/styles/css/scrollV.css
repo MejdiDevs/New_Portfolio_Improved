@@ -1,0 +1,33 @@
+.parallax {
+  position: relative;
+  overflow: visible; /* do NOT clip icons */
+}
+
+.scroller {
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+  /* 🔥 RESET demo text styles */
+  font-size: inherit;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-align: left;
+  filter: none;
+}
+
+/* ScrollVelocity clones children inside spans */
+.scroller > span {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* 🚫 remove demo responsive font scaling */
+@media (min-width: 768px) {
+  .scroller {
+    font-size: inherit;
+    line-height: normal;
+  }
+}

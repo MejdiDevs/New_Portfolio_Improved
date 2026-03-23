@@ -1,0 +1,19 @@
+.scroll-float {
+    overflow: hidden;
+}
+
+h2:has(.scroll-float-text) {
+    font-size: 50px !important;
+}
+
+.scroll-float-text {
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    font-size: 50px !important;
+    color: #0A7CFF;
+}
+
+.char {
+    display: inline-block;
+}

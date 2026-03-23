@@ -1,0 +1,55 @@
+.inf_banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 7.3em;
+}
+.inf_banner .wrapper {
+  position: absolute;
+  display: flex;
+  gap: 80px;
+}
+.inf_banner .wrapper section {
+  display: flex;
+  animation: swipe 50000ms linear infinite backwards;
+  gap: 80px;
+}
+.inf_banner .wrapper section > div {
+  gap: 15px;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.inf_banner .wrapper section > div > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.inf_banner .wrapper section > div > div img {
+  margin: 0;
+  max-height: 4.8em;
+}
+.inf_banner .wrapper section > div p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-100%);
+  }
+}
+@keyframes revSwipe {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(100%);
+  }
+}

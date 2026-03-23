@@ -1,0 +1,375 @@
+#root main:has(#project_details_section)>section #cta {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+#root main:has(#project_details_section)>section #cta>h2 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: 500;
+  width: 100%;
+  max-width: 1400px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+#root main:has(#project_details_section)>section #cta>h2 img {
+  height: 1.2em;
+}
+
+#root main:has(#project_details_section)>section #cta>a .halo {
+  margin-top: 30px;
+  font-size: 1.2em !important;
+}
+
+#root main:has(#project_details_section) .feedback_section {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+#root main:has(#project_details_section) .feedback_section .inf_banner:has(.feedback_card):last-child {
+  margin-top: -80px;
+}
+
+#project_details_section {
+  margin-top: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#project_details_section>h1 {
+  width: 100%;
+  max-width: 1400px;
+  text-align: left !important;
+}
+
+#project_details_section>#header_wrapper {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#project_details_section>#header_wrapper>h3 {
+  margin: 0;
+  width: 100% !important;
+  text-align: left !important;
+  color: #0A7CFF;
+  font-weight: 700 !important;
+  font-size: 2.2em !important;
+}
+
+#project_details_section>#header_wrapper>a {
+  display: flex;
+}
+
+#project_details_section>#header_wrapper>a:has(p.mobl)>p.mobl {
+  display: none !important;
+}
+
+#project_details_section>#header_wrapper>a p {
+  background: #0A7CFF;
+  box-shadow: 0px 0px 30px rgba(10, 124, 255, 0.5);
+  font-weight: 600;
+  color: #fff;
+  text-wrap: nowrap;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+#project_details_section>p {
+  font-size: 1.5em;
+  margin: 0;
+  width: 100%;
+  max-width: 1400px;
+}
+
+#project_details_section .tag_wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 40px;
+}
+
+/* Gallery Layout Container */
+#project_details_section .gallery_layout {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  /* Switched to Flex to fix Grid flickering */
+  flex-wrap: nowrap;
+  /* Force side-by-side on desktop */
+  gap: 24px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  align-items: stretch;
+  /* Make sidebar match carousel height */
+}
+
+/* Image List / Thumbnails (Right Side) */
+#project_details_section #image_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 300px;
+  /* Fixed sidebar width */
+  flex-shrink: 0;
+  /* Prevents shrinking */
+  height: auto;
+  /* Fill adjacent height */
+}
+
+#project_details_section #image_list>div {
+  width: 100%;
+  flex: 1;
+  /* Distribute height equally */
+  height: auto;
+  /* Remove fixed aspect ratio dependency */
+  min-height: 0;
+  /* Allow shrinking */
+  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(10, 124, 255, 0.15);
+}
+
+#project_details_section #image_list>div:hover {
+  border-color: #0A7CFF;
+}
+
+/* Carousel (Left Side) */
+#project_details_section .swiper_wrapper {
+  flex: 1 1 600px;
+  /* Grow, Shrink, Basis */
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  position: relative;
+  display: block;
+}
+
+#project_details_section .swiper_wrapper .nav_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  /* Hidden by default */
+  transition: opacity 0.3s ease;
+  /* Smooth fade in */
+}
+
+/* Show arrows when hovering the entire carousel wrapper */
+#project_details_section .swiper_wrapper:hover .nav_wrapper {
+  opacity: 1;
+}
+
+#project_details_section .swiper_wrapper .nav_wrapper .arrow {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  /* Fixed square size for circle */
+  border-radius: 50%;
+  /* Perfect circle */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 44px;
+  /* Prevent shrinking */
+}
+
+#project_details_section .swiper_wrapper .nav_wrapper .arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+#project_details_section .swiper_wrapper .nav_wrapper .arrow img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  /* Make black SVG white */
+}
+
+#project_details_section .swiper_wrapper .swiper {
+  aspect-ratio: 16/9;
+  /* Standard wide format */
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(10, 124, 255, 0.05);
+  border: 1px solid rgba(10, 124, 255, 0.1);
+}
+
+#project_details_section .swiper_wrapper .swiper .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+#project_details_section .swiper_wrapper .swiper .swiper-slide>div {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (max-width: 1070px) {
+  #root main:has(#project_details_section)>section #cta>h2 br {
+    display: none;
+  }
+
+  /* Adjust sidebar width if needed, or leave naturally */
+  #project_details_section #image_list {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #project_details_section {
+    margin-top: 60px;
+  }
+
+  #project_details_section>#header_wrapper {
+    gap: 20px;
+  }
+
+  #project_details_section>#header_wrapper>h3 {
+    font-size: 1.8em !important;
+  }
+
+  #project_details_section>p {
+    font-size: 1.4em;
+  }
+
+  #project_details_section .tag_wrapper {
+    margin-top: 30px;
+  }
+
+  /* Stack Vertical */
+  #project_details_section .gallery_layout {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #project_details_section .swiper_wrapper {
+    flex: 1 1 auto !important;
+  }
+
+  #project_details_section .swiper_wrapper .swiper {
+    aspect-ratio: 16/9 !important;
+    height: auto !important;
+  }
+
+  #project_details_section #image_list {
+    width: 100%;
+    /* Full width when stacked */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    height: 160px;
+    gap: 15px;
+  }
+
+  #contact_cta_section {
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #root main:has(#project_details_section)>section #cta>h2 {
+    font-size: 1.6em;
+  }
+
+  #project_details_section {
+    margin-top: 40px;
+  }
+
+  #project_details_section>h1 {
+    font-size: 2.5em !important;
+  }
+
+  #project_details_section>h3 {
+    font-size: 2em !important;
+  }
+
+  #project_details_section>p {
+    font-size: 1.3em;
+  }
+
+  #project_details_section>#header_wrapper>a:has(p.mobl)>p {
+    display: none;
+  }
+
+  #project_details_section>#header_wrapper>a:has(p.mobl)>p.mobl {
+    display: flex !important;
+    margin: 0 !important;
+  }
+
+  #project_details_section .gallery_layout {
+    gap: 20px;
+  }
+
+  #project_details_section #image_list {
+    height: 100px;
+    gap: 10px;
+  }
+
+  #project_details_section #image_list>div {
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #project_details_section>h1 {
+    font-size: 2em !important;
+  }
+
+  #project_details_section>#header_wrapper>h3 {
+    font-size: 1.6em !important;
+  }
+
+  #project_details_section>p {
+    font-size: 1.2em;
+  }
+
+  /* Consolidated above */
+}
+
+@media only screen and (max-width: 550px) {
+  .inf_banner:has(.feedback_card):last-child {
+    margin-top: -150px !important;
+    height: 350px;
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #project_details_section .swiper_wrapper .nav_wrapper {
+    display: none !important;
+  }
+}

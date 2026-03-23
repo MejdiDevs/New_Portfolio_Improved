@@ -1,0 +1,20 @@
+{
+    "linkedIn": {
+        "deep": "linkedin://in/mejdichennoufi",
+        "fallback": "https://www.linkedin.com/in/mejdichennoufi/"
+    },
+
+    "github": {
+        "fallback": "https://github.com/MejdiDev"
+    },
+
+    "facebook": {
+        "deep": "fb://profile/100021540181265",
+        "fallback": "https://www.facebook.com/mejdy.chennoufy/"
+    },
+    
+    "instagram": {
+        "deep": "instagram://user?username=mejdichennoufi",
+        "fallback": "https://www.instagram.com/mejdichennoufi/"
+    }
+}

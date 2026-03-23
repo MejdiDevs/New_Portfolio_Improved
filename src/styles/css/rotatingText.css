@@ -1,0 +1,46 @@
+.text-rotate {
+  display: inline-flex;
+  /* inline-flex for centering */
+  align-items: center;
+  /* vertical centering */
+  white-space: nowrap;
+  /* keep everything on one line */
+  overflow: hidden;
+  /* hide overflow */
+  transition: width 0.3s ease;
+  /* smooth width transition */
+}
+
+.text-rotate-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-rotate-word {
+  display: inline-flex;
+  /* keep words on single line */
+  white-space: nowrap;
+  align-items: center;
+  /* vertically center letters */
+}
+
+.text-rotate-lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-rotate-element {
+  display: inline-block;
+}
+
+.text-rotate-space {
+  white-space: pre;
+  /* preserve spaces */
+}

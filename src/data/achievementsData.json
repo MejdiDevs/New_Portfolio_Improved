@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "type": "hackathon",
+        "title": "Hackathon Winner",
+        "event": "Tech Innovation Challenge 2022",
+        "date": "Nov 2022",
+        "image": "https://i.ibb.co/Q7PpNCMQ/4g-RSg-Ud-J.jpg",
+        "description": "Won first place in a 48-hour hackathon focused on IoT solutions. Developed a smart home automation system using Arduino and React Native, demonstrating full-stack capabilities under time constraints.",
+        "tags": ["Arduino", "React Native", "IoT", "Team Leadership"],
+        "projectLink": "/projects",
+        "extendedInfo": {
+            "teamSize": "3 members",
+            "duration": "48 hours",
+            "prize": "First Place",
+            "keyFeatures": [
+                "Real-time IoT device control",
+                "Cross-platform mobile app",
+                "Cloud-based backend architecture",
+                "Integration with multiple sensor types"
+            ],
+            "challenges": "Managing time constraints while ensuring code quality and implementing robust error handling for IoT communication."
+        }
+    },
+    {
+        "id": 2,
+        "type": "ideathon",
+        "title": "Ideathon Finalist",
+        "event": "Startup Weekend Tunisia",
+        "date": "Mar 2023",
+        "image": "https://i.ibb.co/Q7PpNCMQ/4g-RSg-Ud-J.jpg",
+        "description": "Reached the finals with an innovative healthcare app idea. Pitched a telemedicine platform connecting rural patients with specialists, showcasing both technical and business acumen.",
+        "tags": ["Flutter", "Firebase", "UX Design", "Pitching"],
+        "projectLink": null,
+        "extendedInfo": {
+            "teamSize": "4 members",
+            "duration": "54 hours",
+            "prize": "Finalist",
+            "keyFeatures": [
+                "Telemedicine consultation system",
+                "Secure video conferencing",
+                "Prescription management",
+                "Patient records management"
+            ],
+            "challenges": "Designing an intuitive user experience for users with varying technical proficiency and ensuring HIPAA-compliant data handling."
+        }
+    },
+    {
+        "id": 3,
+        "type": "hackathon",
+        "title": "Hackathon Participant",
+        "event": "Local Developer Meetup",
+        "date": "Jun 2021",
+        "image": "https://i.ibb.co/Q7PpNCMQ/4g-RSg-Ud-J.jpg",
+        "description": "Participated in a competitive hackathon, building a real-time collaboration tool. Gained valuable experience in rapid prototyping, teamwork, and presenting technical solutions to judges.",
+        "tags": ["MERN Stack", "WebSockets", "Agile"],
+        "projectLink": "/projects",
+        "extendedInfo": {
+            "teamSize": "2 members",
+            "duration": "36 hours",
+            "prize": "Participant",
+            "keyFeatures": [
+                "Real-time collaborative editing",
+                "Multi-user synchronization",
+                "Version control system",
+                "Live cursors and presence indicators"
+            ],
+            "challenges": "Implementing conflict resolution for simultaneous edits and maintaining real-time performance with multiple concurrent users."
+        }
+    }
+]
+

@@ -1,0 +1,46 @@
+[
+    {
+        "class": "Frontend",
+        "skills": [
+            "./icons/skills/nextjs.svg",
+            "./icons/skills/react.svg",
+            "./icons/skills/angularjs.svg",
+            "./icons/skills/js.svg",
+            "./icons/skills/flutter.svg",
+            "./icons/skills/sass.svg",
+            "./icons/skills/bootstrap.svg",
+            "./icons/skills/css.svg",
+            "./icons/skills/html.svg"
+        ]
+    },
+
+    {
+        "class": "Backend",
+        "skills": [
+            "./icons/skills/nodejs.svg",
+            "./icons/skills/expressjs.svg",
+
+            "./icons/skills/firebase.svg",
+            "./icons/skills/supabase.svg",
+
+            "./icons/skills/mongodb.svg",
+            "./icons/skills/mysql.svg",
+
+            "./icons/skills/django.svg",
+            "./icons/skills/python.svg",
+
+            "./icons/skills/php.svg",
+            "./icons/skills/json.svg"
+        ]
+    },
+
+    {
+        "class": "Tools",
+        "skills": [
+            "./icons/skills/figma.svg",
+            "./icons/skills/photoshop.svg",
+            "./icons/skills/illustrator.svg",
+            "./icons/skills/notion.svg"
+        ]
+    }
+]

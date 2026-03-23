@@ -1,0 +1,189 @@
+#skills_section {
+  margin-top: 180px;
+}
+
+/* ========================= */
+/* WRAPPER (was :has(.inf_banner)) */
+/* ========================= */
+
+#skills_section .skills_scroll_wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+/* ========================= */
+/* PARALLAX ROW (was .inf_banner) */
+/* ========================= */
+
+#skills_section .parallax {
+  position: relative;
+
+  margin-top: 50px;
+  height: 11em;
+  padding-top: 40px;
+  padding-bottom: 10px;
+
+  box-sizing: border-box;
+  overflow: visible;
+
+  display: flex;
+  align-items: center;
+
+  mask: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+/* second row spacing (exact match) */
+#skills_section .parallax + .parallax {
+  margin-top: 10px;
+}
+
+/* ========================= */
+/* MOVING STRIP */
+/* ========================= */
+
+#skills_section .scroller {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+/* ScrollVelocity duplicates children in spans */
+#skills_section .scroller > span {
+  display: flex;
+}
+
+/* ========================= */
+/* SKILL CARD */
+/* ========================= */
+
+#skills_section .skill_wrapper {
+  gap: 15px;
+  height: 8em;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 60px;
+  cursor: default;
+
+  transition: transform 0.3s ease;
+}
+
+#skills_section .skill_wrapper:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+#skills_section .skill_wrapper > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+#skills_section .skill_wrapper:hover > div {
+  transform: scale(1.1);
+}
+
+/* 🔒 CRITICAL ICON SIZE LOCK */
+#skills_section .skill_wrapper > div img {
+  margin: 0;
+  max-height: 4.8em;
+  width: auto;
+
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+#skills_section .skill_wrapper:hover > div img {
+  transform: scale(1.05);
+  filter:
+    drop-shadow(0px 8px 20px rgba(10, 124, 255, 0.8))
+    drop-shadow(0px 0px 15px rgba(10, 124, 255, 0.6));
+}
+
+#skills_section .skill_wrapper p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media only screen and (max-width: 900px) {
+  #skills_section {
+    margin-top: 120px;
+  }
+
+  #skills_section .parallax {
+    height: 10em;
+    padding-top: 35px;
+  }
+
+  #skills_section .skill_wrapper {
+    margin: 0 50px;
+  }
+
+  #skills_section .skill_wrapper > div img {
+    max-height: 4.5em;
+  }
+
+  #skills_section .skill_wrapper p {
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #root main > section.fade-in-section:has(#skills_section) {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  #skills_section .parallax {
+    height: 9em;
+    padding-top: 30px;
+
+    mask: linear-gradient(
+      to right,
+      transparent,
+      white 18%,
+      white 82%,
+      transparent
+    );
+    -webkit-mask: linear-gradient(
+      to right,
+      transparent,
+      white 18%,
+      white 82%,
+      transparent
+    );
+  }
+
+  #skills_section .skill_wrapper {
+    margin: 0 35px;
+  }
+
+  #skills_section .skill_wrapper > div img {
+    max-height: 4em;
+  }
+
+  #skills_section .skill_wrapper p {
+    font-size: 1em;
+  }
+}

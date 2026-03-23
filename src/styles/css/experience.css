@@ -1,0 +1,405 @@
+/* Light theme styles */
+[data-theme=light] #experience_section .exp_card {
+  background: rgba(255, 255, 255, 0.4) !important;
+  border: 1px solid rgba(10, 124, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme=light] #experience_section .exp_card #content>span h3 {
+  background: none !important;
+  -webkit-text-fill-color: #000 !important;
+  color: #000 !important;
+}
+
+[data-theme=light] #experience_section .exp_card #content>span h4 {
+  color: #4B5563 !important;
+}
+
+[data-theme=light] #experience_section .exp_card ul li {
+  color: #374151 !important;
+}
+
+[data-theme=light] #experience_section .exp_card img:not(.light) {
+  display: none !important;
+}
+
+[data-theme=light] #experience_section .exp_card img.light {
+  display: flex !important;
+  width: 11em;
+  height: auto;
+}
+
+[data-theme=light] #experience_section .exp_card .tag_wrapper .tag {
+  background: rgba(10, 124, 255, 0.1) !important;
+  border: 1px solid rgba(10, 124, 255, 0.2) !important;
+  color: #0A7CFF !important;
+  box-shadow: none !important;
+}
+
+[data-theme=light] #experience_section .exp_card .tag_wrapper .tag:hover {
+  background: rgba(10, 124, 255, 0.2) !important;
+}
+
+/* CRITICAL FIX: Override html/body overflow to make sticky work */
+/* Sticky positioning breaks when any ancestor has overflow:hidden */
+html:has(#experience_section),
+body:has(#experience_section) {
+  overflow-x: clip !important;
+  /* clip allows sticky to work, hidden doesn't */
+}
+
+/* Section Layout */
+#experience_section {
+  margin-top: 100px;
+
+  #experience_section {
+    position: relative;
+    overflow: visible;
+    /* important */
+  }
+
+  #experience_cards_wrapper {
+    position: relative;
+    overflow: visible;
+    /* important */
+  }
+
+  /* The sticky “slot” */
+  .exp_card_container {
+    position: sticky;
+    top: 22dvh;
+    height: 100vh;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow: visible;
+  }
+
+  /* The scaling card */
+  .exp_card {
+    position: relative;
+    transform-origin: top center;
+  }
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  /* Remove any overflow that might break sticky */
+  overflow: visible;
+}
+
+#experience_section .title_wrapper {
+  text-align: center;
+  padding: 60px 30px 0;
+}
+
+#experience_section .title_wrapper h2 {
+  width: auto;
+  padding: 4px 30px;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#experience_section .title_wrapper h2 img {
+  width: 48px;
+  height: 48px;
+}
+
+#experience_section .title_wrapper p {
+  color: #9CA3AF;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+#experience_section #experience_cards_wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  position: relative;
+  padding: 0 30px;
+  /* Critical: ensure overflow doesn't break sticky */
+  overflow: visible;
+}
+
+/* Stacking Card Container */
+.exp_card_container {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: sticky;
+  top: 22dvh;
+}
+
+/* Override parent element styles that break sticky */
+main:has(#experience_section) {
+  overflow: visible !important;
+}
+
+.fade-in-section:has(#experience_section) {
+  overflow: visible !important;
+}
+
+/* Spotlight Card Wrapper - Enhanced */
+.exp_card_spotlight {
+  width: 100%;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(8, 20, 45, 1) 0%, rgba(5, 15, 35, 1) 100%);
+  border: 1px solid rgba(10, 124, 255, 0.15);
+  overflow: hidden;
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exp_card_spotlight:hover {
+  border-color: rgba(10, 124, 255, 0.3);
+  box-shadow:
+    0 20px 50px -12px rgba(10, 124, 255, 0.2),
+    0 0 0 1px rgba(10, 124, 255, 0.1);
+}
+
+.exp_card_spotlight::before {
+  border-radius: 24px;
+  background: radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%);
+}
+
+.exp_card_spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Light theme spotlight */
+[data-theme=light] .exp_card_spotlight {
+  background: linear-gradient(180deg, rgba(224, 232, 246, 1) 0%, rgba(235, 241, 250, 1) 100%);
+  border: 1px solid rgba(10, 124, 255, 0.15);
+}
+
+[data-theme=light] .exp_card_spotlight::before {
+  background: radial-gradient(circle 200px at var(--mouse-x) var(--mouse-y), rgba(10, 124, 255, 0.12), transparent 70%);
+}
+
+/* Experience Card - Enhanced */
+.exp_card {
+  padding: 48px;
+  width: 100%;
+  min-height: 400px;
+  background:
+    radial-gradient(circle 280px at 5% 10%, rgba(10, 124, 255, 0.12) 0%, transparent 55%),
+    radial-gradient(circle 260px at 95% 10%, rgba(10, 124, 255, 0.10) 0%, transparent 55%),
+    radial-gradient(circle 240px at 5% 90%, rgba(10, 124, 255, 0.08) 0%, transparent 55%);
+  box-shadow: none;
+  border-radius: 24px;
+  gap: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+  transform-origin: top;
+  z-index: 2;
+}
+
+.exp_card img:not(.light) {
+  width: 11em;
+  height: auto;
+  display: block;
+}
+
+.exp_card img.light {
+  display: none;
+}
+
+.exp_card #spt {
+  background: #087EA4;
+  opacity: 0.5;
+  width: 3px;
+  align-self: stretch;
+  height: auto;
+  min-height: 100%;
+}
+
+.exp_card .tag_wrapper {
+  width: 100%;
+  gap: 8px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.exp_card .tag_wrapper .tag {
+  background: rgba(10, 124, 255, 0.08);
+  border: 1px solid rgba(10, 124, 255, 0.15);
+  border-radius: 50px;
+  padding: 6px 16px;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4DA3FF;
+  transition: all 0.2s ease;
+}
+
+.exp_card .tag_wrapper .tag:hover {
+  background: rgba(10, 124, 255, 0.15);
+  border-color: rgba(10, 124, 255, 0.3);
+}
+
+.exp_card #content {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  gap: 0;
+}
+
+.exp_card #content>span {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.exp_card #content>span h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.75em;
+  letter-spacing: -0.01em;
+
+  background: linear-gradient(0deg, rgb(172, 174, 173) 0%, rgb(255, 255, 255) 57%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.exp_card #content>span h4 {
+  margin: 0;
+  color: rgba(156, 163, 175, 0.8);
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.exp_card #content ul {
+  color: #9CA3AF;
+  font-size: 1.35em;
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+  padding-left: 1.5em;
+}
+
+.exp_card #content ul li {
+  margin-bottom: 12px;
+  list-style: disc;
+  line-height: 1.6;
+}
+
+.exp_card #content ul br {
+  display: none;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1200px) {
+  #experience_section #experience_cards_wrapper {
+    max-width: 100%;
+  }
+
+  .exp_card {
+    padding: 40px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #experience_section {
+    margin-top: 80px;
+  }
+
+  #experience_section #experience_cards_wrapper {
+    margin-top: 40px;
+  }
+
+  .exp_card_container {
+    height: auto;
+  }
+
+  .exp_card {
+    padding: 24px;
+    gap: 30px;
+    height: auto;
+  }
+
+  .exp_card img {
+    width: 7em !important;
+  }
+
+  .exp_card #content>span h3 {
+    font-size: 1.4em;
+  }
+
+  .exp_card #content>span h4 {
+    font-size: 1.05em;
+  }
+
+  .exp_card #content ul {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #experience_section .title_wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .exp_card {
+    gap: 25px;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .exp_card #content>span h3 {
+    font-size: 1.3em;
+  }
+
+  .exp_card #content>span h4 {
+    font-size: 1em;
+  }
+
+  .exp_card #content ul {
+    font-size: 1em;
+  }
+
+  .exp_card img {
+    width: 7em !important;
+  }
+
+  .exp_card #spt {
+    height: 3px;
+    width: 100%;
+  }
+
+  .exp_card #content>span {
+    flex-direction: column-reverse;
+    align-items: start;
+    gap: 5px;
+  }
+
+  .exp_card #content ul li {
+    display: none;
+    margin-bottom: 0;
+  }
+
+  .exp_card #content ul li:first-child,
+  .exp_card #content ul li:nth-child(3),
+  .exp_card #content ul li:nth-child(5) {
+    display: list-item;
+  }
+}

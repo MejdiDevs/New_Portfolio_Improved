@@ -1,0 +1,244 @@
+/* Skeleton loader animations */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton_box {
+  background: linear-gradient(90deg,
+      rgba(209, 213, 219, 0.1) 0px,
+      rgba(209, 213, 219, 0.2) 40px,
+      rgba(209, 213, 219, 0.1) 80px);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  display: block;
+  border-radius: 4px;
+}
+
+[data-theme="light"] .skeleton_box {
+  background: linear-gradient(90deg,
+      rgba(224, 232, 246, 0.3) 0px,
+      rgba(224, 232, 246, 0.5) 40px,
+      rgba(224, 232, 246, 0.3) 80px);
+  background-size: 200px 100%;
+}
+
+/* Skills list skeleton */
+#skill_list_section.skeleton {
+  margin-top: 150px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+.skeleton_title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.skeleton_box.skeleton_h1 {
+  width: 400px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.skeleton_subtitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.skeleton_box.skeleton_h3 {
+  width: 600px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+/* Certificates skeleton */
+#skill_list_section.skeleton .skeleton_cert_wrapper {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 120px;
+}
+
+#skill_list_section.skeleton .skeleton_cert {
+  padding: 15px;
+  padding-bottom: 0;
+  height: calc(100% - 30px);
+  width: calc(50% - 90px);
+  background: rgba(209, 213, 219, 0.05);
+  filter: drop-shadow(0px 25px 25px rgba(0, 0, 0, 0.15));
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#skill_list_section.skeleton .skeleton_cert_image {
+  border-radius: 8px;
+  width: 100%;
+  aspect-ratio: 22/17;
+}
+
+#skill_list_section.skeleton .skeleton_cert_label {
+  width: 70%;
+  height: 20px;
+  margin-top: 10px;
+}
+
+#skill_list_section.skeleton .skeleton_button {
+  width: 220px;
+  height: 50px;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+/* Skills list skeleton */
+#skill_list_section.skeleton .skeleton_skill_list {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 110px;
+}
+
+#skill_list_section.skeleton .skeleton_class_wrapper {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+#skill_list_section.skeleton .skeleton_class_wrapper>div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+#skill_list_section.skeleton .skeleton_class_title {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: -20px;
+  grid-column: 1/-1;
+  width: 200px;
+  height: 36px;
+  border-radius: 6px;
+}
+
+#skill_list_section.skeleton .skeleton_skill {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0px 0px 15px rgba(10, 124, 255, 0.8);
+  border-radius: 35px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  padding: 10px 5px;
+  padding-bottom: 0;
+  background: rgba(209, 213, 219, 0.05);
+}
+
+#skill_list_section.skeleton .skeleton_skill_icon {
+  width: 100px;
+  aspect-ratio: 1/1;
+}
+
+#skill_list_section.skeleton .skeleton_skill_label {
+  width: 60px;
+  height: 14px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  #skill_list_section.skeleton {
+    margin-top: 100px;
+  }
+
+  #skill_list_section.skeleton .skeleton_cert_wrapper {
+    gap: 35px;
+    margin-top: 80px;
+  }
+
+  #skill_list_section.skeleton .skeleton_cert {
+    width: calc(50% - 45px);
+  }
+
+  #skill_list_section.skeleton .skeleton_class_wrapper>div {
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, 130px);
+  }
+
+  #skill_list_section.skeleton .skeleton_skill_icon {
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #skill_list_section.skeleton {
+    margin-top: 4.5em !important;
+  }
+
+  #skill_list_section.skeleton .skeleton_cert_wrapper {
+    flex-flow: column nowrap;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  #skill_list_section.skeleton .skeleton_cert {
+    width: calc(100% - 30px);
+  }
+
+  #skill_list_section.skeleton .skeleton_skill_list {
+    margin-top: 80px;
+  }
+
+  #skill_list_section.skeleton .skeleton_class_wrapper {
+    margin-bottom: 80px;
+  }
+
+  #skill_list_section.skeleton .skeleton_class_wrapper>div {
+    gap: 0;
+    row-gap: 20px;
+    grid-template-columns: repeat(2, calc(50% - 10px)) !important;
+    justify-content: space-between;
+  }
+
+  #skill_list_section.skeleton .skeleton_class_title {
+    margin-bottom: 0;
+  }
+
+  #skill_list_section.skeleton .skeleton_skill {
+    width: auto;
+  }
+
+  #skill_list_section.skeleton .skeleton_skill_icon {
+    width: 80px;
+  }
+
+  .skeleton_box.skeleton_h1 {
+    width: 300px;
+    height: 50px;
+  }
+
+  .skeleton_box.skeleton_h3 {
+    width: 90%;
+    max-width: 500px;
+  }
+}

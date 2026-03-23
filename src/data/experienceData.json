@@ -1,0 +1,100 @@
+[
+    {
+        "title": "Computer Society Chair",
+        "duration": "Jan 2026 - Present",
+        "image": "./work/IEEE_enetcom.png",
+        "tags": [
+            "MERN",
+            "Angular",
+            "Flutter",
+            "PHP",
+            "Arduino",
+            "C",
+            "Python",
+            "SQL"
+        ],
+        "bulletPoints": [
+            "Delivered production-ready web, mobile, and IoT solutions",
+            "Built and deployed real-world and academic projects",
+            "Maintained 3+ years of freelance work alongside studies",
+            "Managed client communication and delivery timelines"
+        ]
+    },
+    {
+        "title": "Software Developer",
+        "duration": "Apr 2021 - Present",
+        "image": "./work/freelance.png",
+        "tags": [
+            "MERN",
+            "Angular",
+            "Flutter",
+            "PHP",
+            "Arduino",
+            "C",
+            "Python",
+            "SQL"
+        ],
+        "bulletPoints": [
+            "Delivered production-ready web, mobile, and IoT solutions",
+            "Built and deployed real-world and academic projects",
+            "Maintained 3+ years of freelance work alongside studies",
+            "Managed client communication and delivery timelines"
+        ]
+    },
+    {
+        "title": "Bureau Member",
+        "duration": "Nov 2020 - Mar 2023",
+        "image": "./work/jci.png",
+        "tags": [
+            "Soft Skills",
+            "Communication",
+            "Adaptability",
+            "Planning",
+            "Team Work"
+        ],
+        "bulletPoints": [
+            "Organized and coordinated workshops throughout the year",
+            "Participated in humanitarian and entertainment events",
+            "Collaborated with teams on high-impact community events"
+        ]
+    },
+    {
+        "title": "Volunteer & First-Aid Provider",
+        "duration": "Apr 2021 - Jan 2023",
+        "image": "./work/tn_red_crescent.png",
+        "tags": [
+            "Volunteering",
+            "Social Skills",
+            "Patience",
+            "Team Work",
+            "PHP",
+            "SQL",
+            "Design"
+        ],
+        "bulletPoints": [
+            "Developed BkVax, a vaccination data management platform",
+            "Participated in humanitarian field operations",
+            "Provided on-ground aid distribution to families in need",
+            "Collaborated with diverse teams during crisis response"
+        ]
+    },
+    {
+        "title": "Training Manager & President",
+        "duration": "Nov 2020 - Oct 2022",
+        "image": "./work/evolve.png",
+        "tags": [
+            "Leadership",
+            "Mentorship",
+            "Negotiation",
+            "Robotics",
+            "Arduino",
+            "Electronics"
+        ],
+        "bulletPoints": [
+            "Led training sessions on electronics, IoT, and programming",
+            "Organized technical workshops for high school students",
+            "Negotiated with sponsors for better tools and workspace",
+            "Mentored peers in hands-on robotics and IT projects"
+        ]
+    }
+]

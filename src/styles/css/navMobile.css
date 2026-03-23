@@ -1,0 +1,194 @@
+body:has(aside.nav_mobile.shown) {
+  overflow-y: hidden;
+}
+
+aside.nav_mobile {
+  display: block;
+  z-index: 999;
+  height: 100dvh;
+  box-sizing: border-box;
+  width: calc(80dvw - 50px);
+  min-width: 250px;
+  background: #021E3D;
+  position: fixed;
+  top: 0;
+  left: min(0px - 50dvw, -300px);
+  transition: left 400ms ease-in-out, visibility 0ms 400ms;
+  padding: 50px 20px;
+  visibility: hidden;
+  overflow-y: auto;
+}
+
+aside.nav_mobile.shown {
+  left: 0;
+  visibility: visible;
+  transition: left 400ms ease-in-out, visibility 0ms;
+}
+
+aside.nav_mobile #profile {
+  width: 100%;
+}
+
+aside.nav_mobile #profile #img {
+  width: 5.5em;
+  height: 5.5em;
+  border-radius: 50%;
+  background-image: url("../assets/pdp_2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  transition: background-size 250ms ease-in-out;
+}
+
+aside.nav_mobile #profile #img:hover {
+  background-size: 120%;
+}
+
+aside.nav_mobile #profile h1 {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
+aside.nav_mobile #profile p {
+  margin: 0;
+  color: #9CA3AF;
+}
+
+aside.nav_mobile hr {
+  margin: 30px 0;
+}
+
+aside.nav_mobile nav {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+aside.nav_mobile ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+aside.nav_mobile ul li {
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+}
+
+aside.nav_mobile ul li .img_wrapper {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside.nav_mobile ul li .img_wrapper img {
+  margin: 0;
+  width: 25px;
+}
+
+aside.nav_mobile ul li a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #D1D5DB;
+  width: 100%;
+  transition: transform 0.25s ease;
+}
+
+aside.nav_mobile ul li a:hover {
+  transform: translateX(4px);
+}
+
+aside.nav_mobile ul li a:hover p {
+  color: #fff;
+}
+
+aside.nav_mobile ul li p {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #D1D5DB;
+  transition: color 0.25s ease;
+}
+
+aside.nav_mobile ul li a.active p {
+  color: #0A7CFF;
+  font-weight: 600;
+}
+
+aside.nav_mobile ul li a.active:hover p {
+  color: #4DA3FF;
+}
+
+aside.nav_mobile ul li a:focus-visible {
+  outline: 2px solid #0A7CFF;
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+aside.nav_mobile #a_btn_wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  right: 20px;
+}
+
+aside.nav_mobile #a_btn_wrapper>a:has(> button) button {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%), rgba(10, 124, 255, 0.24);
+  box-shadow: 0px 8px 40px -20px rgba(255, 255, 255, 0.2), inset 1px 1px 0px rgba(255, 255, 255, 0.08), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.06);
+  gap: 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+aside.nav_mobile #a_btn_wrapper>a:has(> button) button:hover {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%), rgba(10, 124, 255, 0.4);
+  box-shadow: 0px 12px 40px -15px rgba(10, 124, 255, 0.4), inset 1px 1px 0px rgba(255, 255, 255, 0.12), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+aside.nav_mobile #a_btn_wrapper>a:has(> button) button p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  aside.nav_mobile #profile h1 {
+    font-size: 1.7rem;
+  }
+
+  aside.nav_mobile ul li p {
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+
+  aside.nav_mobile,
+  .overlay {
+    display: none !important;
+  }
+
+  body:has(aside.nav_mobile.shown) {
+    overflow-y: auto !important;
+  }
+}

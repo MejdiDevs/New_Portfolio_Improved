@@ -1,0 +1,512 @@
+/* ═══════════════════════════════════════════
+   Internship Popup — Portfolio-Native Style
+   ═══════════════════════════════════════════ */
+
+/* Overlay */
+.internship_popup_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00021a;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 400ms, visibility 0ms 400ms;
+}
+
+.internship_popup_overlay.visible {
+    opacity: 0.85;
+    visibility: visible;
+    transition: opacity 400ms, visibility 0ms;
+    opacity: 1;
+    background: rgba(0, 2, 26, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* ── Card ── */
+.internship_popup {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: linear-gradient(180deg, rgba(8, 20, 45, 1) 0%, rgba(5, 15, 35, 1) 100%);
+    border: 1px solid rgba(10, 124, 255, 0.15);
+    border-radius: 24px;
+    padding: 44px 40px 36px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: none;
+
+    /* entrance */
+    transform: scale(0.92) translateY(24px);
+    opacity: 0;
+    transition:
+        all 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.4s ease;
+    overflow: hidden;
+}
+
+.internship_popup_overlay.visible .internship_popup {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* Hover — matches highlight card hover */
+.internship_popup:hover {
+    border-color: rgba(10, 124, 255, 0.3);
+    box-shadow:
+        0 20px 50px -12px rgba(10, 124, 255, 0.25),
+        0 0 0 1px rgba(10, 124, 255, 0.1);
+}
+
+/* Top-left glow — same as highlight_card::before */
+.internship_popup::before {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(10, 124, 255, 0.1) 0%, rgba(10, 124, 255, 0.04) 40%, transparent 70%);
+    top: -100px;
+    left: -80px;
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.7;
+    transition: opacity 0.4s ease;
+}
+
+.internship_popup:hover::before {
+    opacity: 1;
+}
+
+/* Bottom-right accent — same as highlight_card::after */
+.internship_popup::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(10, 124, 255, 0.08) 0%, rgba(10, 124, 255, 0.03) 35%, transparent 65%);
+    bottom: -80px;
+    right: -70px;
+    filter: blur(50px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+/* ── Close Button ── */
+.internship_popup_close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 48px;
+    border: none;
+    background: transparent;
+    box-shadow: inset 0px 0px 15px rgba(10, 124, 255, 0.5);
+    color: rgba(10, 124, 255, 0.7);
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 2;
+}
+
+.internship_popup_close:hover {
+    box-shadow:
+        inset 0px 0px 20px rgba(10, 124, 255, 0.8),
+        0px 0px 12px rgba(10, 124, 255, 0.3);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+/* ── Badge ── */
+.internship_popup_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 18px;
+    background: transparent;
+    box-shadow: inset 0px 0px 15px rgba(10, 124, 255, 0.6);
+    border: none;
+    border-radius: 48px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #0A7CFF;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+.internship_popup_badge .pulse_dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+    animation: popup_pulse_glow 2s ease-in-out infinite;
+}
+
+@keyframes popup_pulse_glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+}
+
+/* ── Title — Blue gradient text matching portfolio h1 ── */
+.internship_popup h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(0deg, #0056b3 0%, #0A7CFF 57%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* ── Description ── */
+.internship_popup_desc {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #D1D5DB;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.internship_popup_desc strong {
+    color: #0A7CFF;
+    font-weight: 600;
+}
+
+/* ── CTA Buttons — .halo style ── */
+.internship_popup_ctas {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 26px;
+    position: relative;
+    z-index: 1;
+}
+
+.internship_popup_ctas a,
+.internship_popup_ctas button {
+    flex: 1;
+    height: 48px;
+    border-radius: 48px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 250ms ease;
+}
+
+/* Primary — filled halo */
+.internship_popup_cta_primary {
+    background: transparent;
+    color: #D1D5DB;
+    border: none;
+    box-shadow: inset 0px 0px 30px rgba(10, 124, 255, 0.8);
+}
+
+.internship_popup_cta_primary:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow:
+        inset 0px 0px 35px rgba(10, 124, 255, 1),
+        0px 5px 20px rgba(10, 124, 255, 0.4);
+}
+
+/* Secondary — outlined halo */
+.internship_popup_cta_secondary {
+    background: transparent;
+    color: #D1D5DB;
+    border: 2px solid #0A7CFF;
+    box-shadow: 0px 0px 15px rgba(10, 124, 255, 0.3);
+}
+
+.internship_popup_cta_secondary:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0px 0px 30px rgba(10, 124, 255, 0.5), 0px 10px 20px rgba(10, 124, 255, 0.15);
+    background: rgba(10, 124, 255, 0.08);
+    border-color: #3395ff;
+}
+
+/* ── Divider — matches footer_divider gradient ── */
+.internship_popup_divider {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    height: 1px;
+    background: -moz-linear-gradient(90deg, rgba(10, 124, 255, 0) 0%, rgb(10, 124, 255) 50%, rgba(10, 124, 255, 0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(10, 124, 255, 0) 0%, rgb(10, 124, 255) 50%, rgba(10, 124, 255, 0) 100%);
+    background: linear-gradient(90deg, rgba(10, 124, 255, 0) 0%, rgb(10, 124, 255) 50%, rgba(10, 124, 255, 0) 100%);
+    margin-bottom: 22px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Socials Label ── */
+.internship_popup_socials_label {
+    font-size: 0.8rem;
+    color: rgba(209, 213, 219, 0.4);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Social Icons ── */
+.internship_popup_socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.internship_popup_socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.internship_popup_socials a img {
+    height: 32px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.internship_popup_socials a:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: none;
+    background: transparent;
+}
+
+.internship_popup_socials a:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* ── Screen Transition ── */
+.internship_popup_screen {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.internship_popup_screen.screen_exit {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.internship_popup_screen.screen_enter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── CV Choice View ── */
+.internship_popup_cv_choice {
+    position: relative;
+    z-index: 1;
+}
+
+.internship_popup_cv_options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.internship_popup_cv_card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background: linear-gradient(180deg, rgba(8, 20, 45, 0.8) 0%, rgba(5, 15, 35, 0.9) 100%);
+    border: 1px solid rgba(10, 124, 255, 0.15);
+    border-radius: 16px;
+    text-decoration: none;
+    color: #D1D5DB;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    box-shadow: inset 0px 0px 20px rgba(10, 124, 255, 0.15);
+}
+
+.internship_popup_cv_card:hover {
+    border-color: rgba(10, 124, 255, 0.35);
+    box-shadow:
+        inset 0px 0px 30px rgba(10, 124, 255, 0.4),
+        0 8px 24px -8px rgba(10, 124, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.cv_card_icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.cv_card_label {
+    font-size: 1rem;
+    font-weight: 600;
+    flex: 1;
+    text-align: left;
+}
+
+.cv_card_arrow {
+    font-size: 1.2rem;
+    color: #0A7CFF;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.internship_popup_cv_card:hover .cv_card_arrow {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.internship_popup_back_btn {
+    background: transparent;
+    border: none;
+    color: rgba(10, 124, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 48px;
+    transition: all 0.25s ease;
+}
+
+.internship_popup_back_btn:hover {
+    color: #0A7CFF;
+    background: rgba(10, 124, 255, 0.08);
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] .internship_popup_overlay.visible {
+    background: rgba(224, 232, 246, 0.75);
+}
+
+[data-theme="light"] .internship_popup {
+    background: #E0E8F6;
+    box-shadow: inset 0px 0px 30px rgba(10, 124, 255, 0.35);
+}
+
+[data-theme="light"] .internship_popup h2 {
+    background: linear-gradient(0deg, #0056b3 0%, #0A7CFF 57%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+[data-theme="light"] .internship_popup_desc {
+    color: #374151;
+}
+
+[data-theme="light"] .internship_popup_desc strong {
+    color: #0A7CFF;
+}
+
+[data-theme="light"] .internship_popup_cta_primary,
+[data-theme="light"] .internship_popup_cta_secondary {
+    color: #0A7CFF;
+    font-weight: 700;
+}
+
+[data-theme="light"] .internship_popup_cta_primary {
+    background: #0A7CFF;
+    box-shadow: 0px 0px 30px rgba(10, 124, 255, 0.5);
+    color: #fff;
+}
+
+[data-theme="light"] .internship_popup_socials a {
+    box-shadow: inset 0px 0px 15px rgba(10, 124, 255, 0.25);
+}
+
+[data-theme="light"] .internship_popup_socials a img {
+    filter: brightness(0) saturate(100%) invert(36%) sepia(92%) saturate(2000%) hue-rotate(200deg);
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+    .internship_popup_overlay {
+        width: auto !important;
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 540px) {
+    .internship_popup {
+        padding: 36px 22px 28px;
+        border-radius: 22px;
+        max-width: calc(100% - 20px);
+    }
+
+    .internship_popup h2 {
+        font-size: 1.3rem;
+    }
+
+    .internship_popup_desc {
+        font-size: 0.88rem;
+        margin-bottom: 22px;
+    }
+
+    .internship_popup_ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .internship_popup_ctas a,
+    .internship_popup_ctas button {
+        width: 100%;
+        flex: none;
+        height: auto;
+        padding: 14px 20px;
+    }
+
+    .internship_popup_socials a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .internship_popup_divider {
+        width: calc(100% + 24px);
+        margin-left: -12px;
+    }
+}
