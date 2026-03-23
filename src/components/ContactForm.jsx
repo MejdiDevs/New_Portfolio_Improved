@@ -99,7 +99,7 @@ const ContactForm = () => {
         formData.append("message", form.message.trim());
 
         try {
-            const response = await fetch(process.env.REACT_APP_BASIN_ENDPOINT, {
+            const response = await fetch(import.meta.env.REACT_APP_BASIN_ENDPOINT, {
                 method: "POST",
                 body: formData,
                 headers: {
