@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/css/highlightQuickView.css';
+import useScrollLock from './hooks/useScrollLock';
 
 const HighlightQuickView = ({ highlight, isOpen, onClose }) => {
     const [shouldRender, setShouldRender] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
     const [imageError, setImageError] = useState(false);
+
+    useScrollLock(isOpen);
 
     useEffect(() => {
         const handleEscape = (e) => {
@@ -19,14 +22,12 @@ const HighlightQuickView = ({ highlight, isOpen, onClose }) => {
             setIsClosing(false);
             setImageError(false);
             document.addEventListener('keydown', handleEscape);
-            document.querySelector('html').style.overflow = 'hidden';
         } else if (shouldRender) {
             // Start closing animation
             setIsClosing(true);
             const timer = setTimeout(() => {
                 setShouldRender(false);
                 setIsClosing(false);
-                document.querySelector('html').style.overflow = '';
             }, 300); // Match animation duration
             return () => clearTimeout(timer);
         }
@@ -50,6 +51,7 @@ const HighlightQuickView = ({ highlight, isOpen, onClose }) => {
             <div
                 className={`highlight_quick_view_content ${isClosing ? 'closing' : ''}`}
                 onClick={(e) => e.stopPropagation()}
+                data-lenis-prevent
                 onAnimationEnd={(e) => {
                     if (isClosing && e.animationName === 'zoomOut') {
                         setIsClosing(false);
@@ -91,7 +93,7 @@ const HighlightQuickView = ({ highlight, isOpen, onClose }) => {
                         </div>
                     )}
 
-                    <div className="description">
+                    <div className="description" data-lenis-prevent>
                         <p>{highlight.description}</p>
                     </div>
 

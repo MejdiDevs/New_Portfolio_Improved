@@ -5,17 +5,18 @@ const LenisContext = createContext(null);
 
 export const useLenis = () => useContext(LenisContext);
 
-export const LenisProvider = ({ children }) => {
-  const lenisRef = useRef(null);
-
-  useEffect(() => {
-    const lenis = new Lenis({ duration: 1.2, smoothWheel: true, lerp: 0.15 });
-    const raf = (time) => {
-      lenis.raf(time);
+export const LenisProvider = ({ children, externalRef }) => {
+    const internalRef = useRef(null);
+    const lenisRef = externalRef || internalRef;
+  
+    useEffect(() => {
+      const lenis = new Lenis({ duration: 1.2, smoothWheel: true, lerp: 0.15 });
+      const raf = (time) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
       requestAnimationFrame(raf);
-    };
-    requestAnimationFrame(raf);
-    lenisRef.current = lenis;
+      lenisRef.current = lenis;
 
     return () => lenis.destroy();
   }, []);

@@ -146,18 +146,13 @@ const ProjectSlide = memo(({ project, onQuickView, isQuickViewOpen }) => {
 
                     <div className="tag_wrapper mobl">
                         {
-                            project.tags.slice(0, 2).map((tag, idx) =>
+                            project.tags.map((tag, idx) =>
                                 <div className="tag" key={"project-tag-" + idx}>{tag}</div>
                             )
                         }
-
-                        {
-                            project.tags.length > 2 &&
-                            <p>+{project.tags.length - 2} more</p>
-                        }
                     </div>
 
-                    <div className="project_actions">
+                    <div className="project_actions" id="project_slide_actions">
                         <button aria-label={`View details for ${project.title}`}>
                             <img src="./icons/expand.svg" alt="See More" />
                             <p>See more</p>

@@ -2,9 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { supabase } from "../supabase";
 import "../styles/css/internshipPopup.css";
+import useScrollLock from "./hooks/useScrollLock";
 
 const InternshipPopup = () => {
     const [visible, setVisible] = useState(false);
+    useScrollLock(visible);
     const [cvLinks, setCvLinks] = useState([]);
     const [showCvChoice, setShowCvChoice] = useState(false);
     const [animating, setAnimating] = useState(false);
@@ -67,7 +69,7 @@ const InternshipPopup = () => {
             className={`internship_popup_overlay ${visible ? "visible" : ""}`}
             onClick={handleOverlayClick}
         >
-            <div className="internship_popup">
+            <div className="internship_popup" data-lenis-prevent>
                 <button
                     className="internship_popup_close"
                     onClick={handleClose}

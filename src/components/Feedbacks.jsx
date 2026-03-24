@@ -3,7 +3,7 @@ import "../styles/css/feedbacks.css";
 import FadeInSection from "./utils/FadeInSection";
 
 import ScrollableInfBanner from "./ScrollableInfBanner";
-
+import useScrollLock from "./hooks/useScrollLock";
 export const FeedbackCard = ({ feedback = {}, onSelect }) => {
     return(
         <article
@@ -35,6 +35,8 @@ const FeedbackQuickView = ({ feedback, isOpen, onClose }) => {
     const [shouldRender, setShouldRender] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
 
+    useScrollLock(isOpen);
+
     useEffect(() => {
         const handleEscape = (e) => {
             if (e.key === 'Escape' && isOpen) {
@@ -46,14 +48,12 @@ const FeedbackQuickView = ({ feedback, isOpen, onClose }) => {
             setShouldRender(true);
             setIsClosing(false);
             document.addEventListener('keydown', handleEscape);
-            document.querySelector('html').style.overflow = 'hidden';
         } else if (shouldRender) {
             // Start closing animation
             setIsClosing(true);
             const timer = setTimeout(() => {
                 setShouldRender(false);
                 setIsClosing(false);
-                document.querySelector('html').style.overflow = '';
             }, 300); // Match animation duration
             return () => clearTimeout(timer);
         }
@@ -77,6 +77,7 @@ const FeedbackQuickView = ({ feedback, isOpen, onClose }) => {
             <div 
                 className={`feedback_quick_view_content ${isClosing ? 'closing' : ''}`}
                 onClick={(e) => e.stopPropagation()}
+                data-lenis-prevent
                 onAnimationEnd={(e) => {
                     if (isClosing && e.animationName === 'zoomOut') {
                         setIsClosing(false);

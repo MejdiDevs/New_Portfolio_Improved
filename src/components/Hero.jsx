@@ -8,40 +8,6 @@ import RotatingText from "./ArDacityUi/RotatingText/RotatingText";
 import CountUp from "./ArDacityUi/CountUp/CountUp";
 
 
-const ScrollIndicator = () => {
-    const [isVisible, setIsVisible] = useState(true);
-    const indicatorRef = useRef(null);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsVisible(window.scrollY <= 100);
-        };
-
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const scrollToProjects = () => {
-        const projectsSection = document.getElementById("project_section");
-        if (projectsSection) {
-            projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    };
-
-    return (
-        <button
-            ref={indicatorRef}
-            className={`scroll_indicator ${isVisible ? "visible" : ""}`}
-            onClick={scrollToProjects}
-            aria-label="Scroll to projects section"
-        >
-            <div className="scroll_indicator_mouse">
-                <div className="scroll_indicator_wheel" />
-            </div>
-            <p>Scroll to explore</p>
-        </button>
-    );
-};
 
 const StatCard = ({ label, value }) => {
     return (
@@ -271,7 +237,6 @@ const Hero = () => {
                 </div>
 
                 <div id="img"></div>
-                <ScrollIndicator />
             </section>
 
             <StatSection

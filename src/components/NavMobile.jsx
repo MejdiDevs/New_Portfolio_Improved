@@ -2,10 +2,13 @@ import "../styles/css/navMobile.css";
 
 import { Link, useLocation } from "react-router-dom";
 import { useMobileNavContext } from "./contexts/MobileNavContext";
+import useScrollLock from "./hooks/useScrollLock";
 
 const NavMobile = () => {
     const location = useLocation();
     const { isOpen, closeNav } = useMobileNavContext();
+
+    useScrollLock(isOpen);
 
     return (
         <>
@@ -20,6 +23,7 @@ const NavMobile = () => {
                 id="mobile-navigation"
                 aria-label="Mobile navigation menu"
                 aria-hidden={!isOpen}
+                data-lenis-prevent
             >
                 <div id="profile">
                     <div id="img"></div>
