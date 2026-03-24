@@ -106,8 +106,8 @@ nav.sticky>div:not(#hamburger) {
   overflow-y: hidden;
 
   background: linear-gradient(0deg, rgba(10, 124, 255, 0.13) 0%, rgba(10, 124, 255, 0) 50%);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
 }
 
 nav.sticky.nav-hidden>div:not(#hamburger) {
