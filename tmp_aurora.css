@@ -1,0 +1,3 @@
+.aurora-container{z-index:-2;width:100%;height:100dvh;top:0;left:0;overflow:hidden;position:absolute!important}
+@media only screen and (width<=800px){.aurora-container{-webkit-mask-image:linear-gradient(#000 60%,#0000 100%);mask-image:linear-gradient(#000 60%,#0000 100%);height:35vh!important}
+.aurora-container canvas{transform:translate(-30%);object-fit:fill!important;width:250%!important;height:100%!important}
