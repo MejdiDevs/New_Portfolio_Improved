@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { supabase } from "../supabase";
 import "../styles/css/internshipPopup.css";
 import useScrollLock from "./hooks/useScrollLock";
@@ -12,6 +12,7 @@ const InternshipPopup = () => {
     const [animating, setAnimating] = useState(false);
     const dismissedPages = useRef(new Set());
     const location = useLocation();
+    const navigate = useNavigate();
 
     // Fetch all CV links once
     useEffect(() => {
@@ -111,7 +112,7 @@ const InternshipPopup = () => {
                                         if (projectsSection) {
                                             projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
                                         } else {
-                                            window.location.href = "/projects";
+                                            navigate("/projects");
                                         }
                                     }}
                                 >
