@@ -118,7 +118,7 @@ const Hero = () => {
                         <h1 className={isSectionVisible ? 'fade_in delay_2' : ''}>
                             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3em' }}>
                                 <RotatingText
-                                    texts={['Mejdi Chennoufi', 'A Software Developer', 'A Web Developer', 'A Mobile Developer', 'An IoT Developer', 'A Volunteer', 'An IEEE Member']}
+                                    texts={['Mejdi Chennoufi', 'An AI Developer', 'A Software Developer', 'A Web Developer', 'A Mobile Developer', 'An IoT Developer', 'An IEEE Officer', 'A Volunteer']}
                                     mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
                                     staggerFrom="last"
                                     initial={{ y: '100%' }}
@@ -135,7 +135,7 @@ const Hero = () => {
 
                     </div>
 
-                    <p>I'm a Full-Stack Developer with {calcYrs()}+ years of freelance experience delivering scalable web, mobile, and IoT solutions. Skilled in React, Node.js, Flutter and MongoDB, I help clients bring their ideas to life with clean, reliable code, delivered on time and built to last, with plenty of real-world projects to show for it.</p>
+                    <p>I’m an AI Developer with {calcYrs()}+ years of freelance experience delivering production-ready AI and full-stack applications. Skilled in LLMs, ML, Python, AWS, MERN, and vector databases, I help turn ideas into real-world products with clean, reliable code, deployed on cloud infrastructure and built to perform at scale.</p>
 
                     {/* <div id="services_summary">
                         <div className="service_tag" onClick={() => {
@@ -174,7 +174,7 @@ const Hero = () => {
 
                     <div className="impt">
                         <img src="./icons/pin.png" alt="Location Pin" />
-                        <p>Nabeul, Tunisia</p>
+                        <p>Sfax / Nabeul, Tunisia</p>
                     </div>
 
                     <div className="impt">
