@@ -254,11 +254,22 @@
 /* Tags */
 #highlights_section .highlight_tags {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     gap: 8px;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+#highlights_section .highlight_tags::-webkit-scrollbar {
+    display: none;
 }
 
 #highlights_section .highlight_tags .tag {
+    flex-shrink: 0;
     padding: 6px 12px;
     background: rgba(10, 124, 255, 0.08);
     border: 1px solid rgba(10, 124, 255, 0.15);
@@ -526,22 +537,9 @@
         gap: 20px;
     }
 
-    /* Keep Tags on One Line (Horizontal Scroll) */
+    /* Horizontal Scroll already enabled globally */
     #highlights_section .highlight_tags {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        mask-image: linear-gradient(to right, black 85%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-    }
-
-    #highlights_section .highlight_tags::-webkit-scrollbar {
-        display: none;
-    }
-
-    #highlights_section .highlight_tags .tag {
-        flex-shrink: 0;
+        margin-top: 5px;
     }
 
     /* Mobile Filters Wrap */

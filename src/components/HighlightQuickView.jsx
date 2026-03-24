@@ -114,37 +114,9 @@ const HighlightQuickView = ({ highlight, isOpen, onClose }) => {
                                 </div>
                             </div>
 
-                            {highlight.extendedInfo.keyFeatures && (
-                                <div className="info_section">
-                                    <h4>Key Features</h4>
-                                    <ul>
-                                        {highlight.extendedInfo.keyFeatures.map((feature, idx) => (
-                                            <li key={idx}>{feature}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
 
-                            {highlight.extendedInfo.challenges && (
-                                <div className="info_section">
-                                    <h4>Challenges</h4>
-                                    <p>{highlight.extendedInfo.challenges}</p>
-                                </div>
-                            )}
                         </div>
                     )}
-
-                    <div className="highlight_quick_view_actions">
-                        {highlight.projectLink && (
-                            <Link
-                                to={highlight.projectLink}
-                                className="halo view_project_btn"
-                                onClick={onClose}
-                            >
-                                View Project
-                            </Link>
-                        )}
-                    </div>
                 </div>
             </div>
         </div>
